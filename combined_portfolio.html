@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core SEO -->
+<meta name="description" content="Tarush Singh — AI Engineer & Machine Learning Specialist. Portfolio showcasing LLMs, RAG systems, computer vision, and scalable ML infrastructure.">
+<meta name="keywords" content="Tarush Singh, AI Engineer, Machine Learning, Portfolio, LLMs, RAG, Computer Vision, MLOps">
+<meta name="author" content="Tarush Singh">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="https://yourdomain.com">
+
+<!-- Open Graph (LinkedIn, Slack, FB) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tarush Singh - AI Engineer">
+<meta property="og:description" content="Portfolio showcasing AI Engineering work in LLMs, RAG, Computer Vision, and scalable ML systems.">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:image" content="https://yourdomain.com/preview.png">
+
+<!-- Structured Data (Google Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tarush Singh",
+  "jobTitle": "AI Engineer",
+  "email": "mailto:singh.tarus@northeastern.edu",
+  "telephone": "+1-513-857-8501",
+  "url": "https://yourdomain.com",
+  "sameAs": [
+    "https://linkedin.com/in/tarush-singh-246144113",
+    "https://github.com/TarushS-1996",
+    "https://medium.com/@singh.tarus"
+  ]
+}
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarush Singh - AI Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ai-blue: #00d4ff;
+            --ai-purple: #8a2be2;
+            --ai-green: #00ff88;
+            --ai-orange: #ff6b35;
+            --dark-bg: #0a0a0f;
+            --card-bg: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8b8;
+            --accent-gradient: linear-gradient(135deg, #00d4ff, #8a2be2, #00ff88);
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--ai-blue);
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(138, 43, 226, 0.05));
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-role {
+            font-size: 1.5rem;
+            color: var(--ai-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--ai-blue);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--ai-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ai-blue);
+            padding: 15px 30px;
+            border: 2px solid var(--ai-blue);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--ai-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(26, 26, 46, 0.5);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--ai-blue);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--ai-green);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ai-blue);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--ai-green);
+            font-weight: bold;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(138, 43, 226, 0.1));
+            text-align: center;
+        }
+
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--card-bg);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--ai-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--ai-green);
+            transform: translateY(-2px);
+        }
+
+        /* Articles & Projects Page Styles */
+        .articles-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(138, 43, 226, 0.05));
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            padding: 1rem 2rem;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active, .tab-button:hover {
+            background: var(--ai-blue);
+            color: white;
+            border-color: var(--ai-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Featured Article */
+        .featured-article {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 4rem;
+            transition: all 0.4s ease;
+        }
+
+        .featured-article:hover {
+            border-color: var(--ai-blue);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--ai-blue), var(--ai-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .featured-content {
+            padding: 3rem;
+        }
+
+        .article-category {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--ai-green);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .read-time {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .article-date {
+            color: var(--ai-blue);
+            font-weight: 600;
+        }
+
+        .read-more-btn {
+            background: var(--ai-blue);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more-btn:hover {
+            background: var(--ai-green);
+            transform: translateY(-2px);
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .article-card:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .article-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(138, 43, 226, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .article-body {
+            padding: 2rem;
+        }
+
+        .article-card .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-card .article-excerpt {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-tag {
+            background: rgba(138, 43, 226, 0.2);
+            color: var(--ai-purple);
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .views-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--accent-gradient);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: var(--ai-blue);
+            border-radius: 50%;
+            top: 30px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-5px);
+        }
+
+        .timeline-date {
+            color: var(--ai-green);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--ai-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .timeline-description ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--ai-blue);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(138, 43, 226, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--ai-green);
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .download-resume {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .download-btn {
+            background: var(--ai-green);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: var(--ai-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item.right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neural-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo" onclick="showPage('home')">Tarush Singh</div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')" class="active">Home</a></li>
+                <li><a onclick="showPage('articles')">Articles & Projects</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1 class="hero-title">Tarush Singh</h1>
+                    <p class="hero-role">AI Engineer & Machine Learning Specialist</p>
+                    <p class="hero-description">
+                        Building production-ready AI systems that deliver real impact. Specialized in LLM integration, 
+                        computer vision, and scalable ML infrastructure with a focus on performance and reliability.
+                    </p>
+                    <div class="cta-buttons">
+                        <button onclick="scrollToSection('contact')" class="btn-primary">
+                            📧 Get In Touch
+                        </button>
+                        <button onclick="showPage('articles')" class="btn-secondary">
+                            📝 View My Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <h2 class="section-title fade-in">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-in">
+                        <p>
+                            I'm an AI Engineer with a passion for <span class="highlight">turning cutting-edge research into production systems</span>. 
+                            My experience spans from building context-enhanced RAG systems to deploying computer vision models 
+                            that achieve 98% accuracy in real-world manufacturing environments.
+                        </p>
+                        <br>
+                        <p>
+                            What sets me apart is my ability to <span class="highlight">bridge the gap between research and production</span>. 
+                            I don't just build models—I create robust, scalable systems that solve real business problems. 
+                            Whether it's reducing debugging time by 35% or improving inference speed by 40%, 
+                            I focus on delivering measurable impact.
+                        </p>
+                        <br>
+                        <p>
+                            I thrive in environments where <span class="highlight">innovation meets execution</span>, 
+                            and I'm always eager to tackle complex challenges that push the boundaries of what's possible with AI.
+                        </p>
+                    </div>
+                    
+                    <div class="stats-grid fade-in">
+                        <div class="stat-card">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Model Accuracy</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">Speed Improvement</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Model Deployments</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">35%</span>
+                            <span class="stat-label">Debug Time Reduced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title fade-in">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category fade-in">
+                        <div class="skill-icon">🧠</div>
+                        <h3 class="skill-title">AI & Machine Learning</h3>
+                        <ul class="skill-list">
+                            <li>Large Language Models (LLMs)</li>
+                            <li>RAG Systems & Context Enhancement</li>
+                            <li>Neural Network Architecture</li>
+                            <li>Deep Learning Frameworks</li>
+                            <li>Model Optimization & Deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="skill-icon">👁️</div>
+                        <h3 class="skill-title">Computer Vision</h3>
+                        <ul class="skill-list">
+                            <li>OpenCV & Image Processing</li>
+                            <li>Real-time Anomaly Detection</li>
+                            <li>Feature Detection & Extraction</li>
+                            <li>CNN Architecture Design</li>
+                            <li>Manufacturing Quality Control</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="skill-icon">🎵</div>
+                        <h3 class="skill-title">Audio AI & NLP</h3>
+                        <ul class="skill-list">
+                            <li>Sentiment Classification</li>
+                            <li>Audio Signal Processing</li>
+                            <li>Distributed Training</li>
+                            <li>GPU Cluster Optimization</li>
+                            <li>Real-time Inference</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div class="skill-icon">⚡</div>
+                        <h3 class="skill-title">Production & DevOps</h3>
+                        <ul class="skill-list">
+                            <li>ML Pipeline Architecture</li>
+                            <li>Model Monitoring & Analytics</li>
+                            <li>Scalable Infrastructure</li>
+                            <li>Performance Optimization</li>
+                            <li>SHAP Analysis & Interpretability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="section value-prop" id="value">
+            <div class="container">
+                <h2 class="section-title fade-in">How I'll Add Value to Your Team</h2>
+                <div class="value-cards">
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🚀</div>
+                        <h3 class="value-title">Production-Ready Solutions</h3>
+                        <p class="value-description">
+                            I build AI systems that actually work in production. From day one, 
+                            I can deploy robust models that scale and perform under real-world conditions.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card fade-in">
+                        <div class="value-icon">⚡</div>
+                        <h3 class="value-title">Performance Optimization</h3>
+                        <p class="value-description">
+                            I don't just make it work—I make it fast. Proven track record of improving 
+                            inference speeds by 40% and reducing operational costs through smart optimization.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🔬</div>
+                        <h3 class="value-title">Research to Reality</h3>
+                        <p class="value-description">
+                            I bridge cutting-edge research with practical implementation. 
+                            I stay current with the latest advances while focusing on business impact.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card fade-in">
+                        <div class="value-icon">📊</div>
+                        <h3 class="value-title">Data-Driven Results</h3>
+                        <p class="value-description">
+                            Everything I build is measurable. I create comprehensive monitoring and 
+                            analytics systems that prove ROI and enable continuous improvement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title fade-in">Let's Build Something Amazing</h2>
+                    <p class="fade-in" style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+                        Ready to discuss how I can help accelerate your AI initiatives? 
+                        I'm always excited to tackle complex challenges and deliver results that matter.
+                    </p>
+                    
+                    <div class="contact-methods fade-in">
+                        <a href="mailto:singh.tarus@northeastern.edu" class="contact-link">
+                            📧 singh.tarus@northeastern.edu
+                        </a>
+                        <a href="https://www.linkedin.com/in/tarush-singh-246144113/" class="contact-link">
+                            💼 LinkedIn
+                        </a>
+                        <a href="https://github.com/TarushS-1996" class="contact-link">
+                            💻 GitHub
+                        </a>
+                        <a href="https://medium.com/@singh.tarus" class="contact-link">
+                            🤖 Medium Article
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ARTICLES & PROJECTS PAGE -->
+    <div id="articles" class="page">
+        <!-- Hero Section -->
+        <section class="articles-hero">
+            <div class="container">
+                <h1 class="hero-title">Articles & Projects</h1>
+                <p class="hero-description">
+                    A comprehensive showcase of my technical writing, research insights, and hands-on project experience 
+                    spanning AI engineering, machine learning, robotics, and software development.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <section class="section">
+            <div class="container">
+                <div class="tab-nav">
+                    <button class="tab-button active" onclick="showTab('articles-tab')">📝 Technical Articles</button>
+                    <button class="tab-button" onclick="showTab('experience')">💼 Experience</button>
+                    <button class="tab-button" onclick="showTab('projects')">🚀 Projects</button>
+                </div>
+
+                <!-- Articles Section -->
+                <div id="articles-tab" class="content-section active">
+                    <h2 class="section-title">Featured Article</h2>
+                    
+                    <article class="featured-article">
+                        <div class="featured-image">🧠</div>
+                        <div class="featured-content">
+                            <div class="article-category">LLM Engineering</div>
+                            <h3 class="article-title">Vector Database Memory for Agentic AI</h3>
+                            <p class="article-excerpt">
+                                Demonstrates an alternative to the idea of using Vector database instead of sliding window.
+                                Shows the capabilities of using a vector DB to store previous questions and metadata of response
+                                to help keep longer and more current and historical query aware system.
+                            </p>
+                            <div class="article-meta">
+                                <span class="read-time">5 min read</span>
+                                <span class="article-date">July 2025</span>
+                            </div>
+                            <a href="https://medium.com/@singh.tarus/from-goldfish-to-elephant-how-vector-database-memory-makes-ai-agents-actually-smart-edf572061c30" class="read-more-btn">
+                                Read Full Article →
+                            </a>
+                        </div>
+                    </article>
+
+                    <h2 class="section-title">Latest Technical Insights</h2>
+                    
+                    <div class="articles-grid">
+                        <article class="article-card">
+                            <div class="article-image">🕸️</div>
+                            <div class="article-body">
+                                <div class="article-category">AI Agents</div>
+                                <h3 class="article-title">LLM Context Enhancement: Real-World Solutions</h3>
+                                <p class="article-excerpt">
+                                    Explore the challenges of limited context in Large Language Models and discover 
+                                    practical machine learning techniques that enhance context accuracy. This comprehensive 
+                                    guide provides a non-coding framework based on real-world agentic AI system experience.
+                                </p>
+                                <div class="article-tags">
+                                    <span class="article-tag">Python</span>
+                                    <span class="article-tag">LLM Context</span>
+                                    <span class="article-tag">RAG</span>
+                                </div>
+                                <div class="article-footer">
+                                    <!-- <div class="views-count">👁️ 2.3K views</div> -->
+                                    <a href="https://medium.com/@singh.tarus/llm-context-enhancement-ed0b005c3673" class="read-more-btn">Read →</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <div class="article-image">🤖</div>
+                            <div class="article-body">
+                                <div class="article-category">AI Agents</div>
+                                <h3 class="article-title">MCP From Scratch: Building Python Agents</h3>
+                                <p class="article-excerpt">
+                                    Complete tutorial on designing MCP-style Python agents that understand and execute 
+                                    code based on docstring analysis with intelligent method ordering.
+                                </p>
+                                <div class="article-tags">
+                                    <span class="article-tag">Python</span>
+                                    <span class="article-tag">AI Agents</span>
+                                    <span class="article-tag">MCP</span>
+                                </div>
+                                <div class="article-footer">
+                                    <!-- <div class="views-count">👁️ 2.3K views</div> -->
+                                    <a href="https://medium.com/@singh.tarus/mcp-from-scratch-building-a-python-agent-that-understands-and-executes-your-code-b51a4687a732" class="read-more-btn">Read →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">⚡</div>
+                            <div class="article-body">
+                                <div class="article-category">Performance</div>
+                                <h3 class="article-title">Supercharging PyTorch Training: 10 GPU Optimizations</h3>
+                                <p class="article-excerpt">
+                                    Deep dive into PyTorch CUDA optimizations with functional code examples. 
+                                    Learn 10 proven techniques to accelerate your model training on GPU clusters.
+                                </p>
+                                <div class="article-tags">
+                                    <span class="article-tag">PyTorch</span>
+                                    <span class="article-tag">CUDA</span>
+                                    <span class="article-tag">GPU</span>
+                                </div>
+                                <div class="article-footer">
+                                    <!-- <div class="views-count">👁️ 4.1K views</div> -->
+                                    <a href="https://medium.com/@singh.tarus/supercharging-pytorch-training-10-gpu-optimizations-with-functional-code-f50b8f719bad" class="read-more-btn">Read →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">📊</div>
+                            <div class="article-body">
+                                <div class="article-category">MLOps</div>
+                                <h3 class="article-title">ML Models: Feature Selection & Interpretation</h3>
+                                <p class="article-excerpt">
+                                    Comprehensive guide to feature selection, null hypothesis testing, and SHAP analysis 
+                                    for improving ML model performance and interpretability.
+                                </p>
+                                <div class="article-tags">
+                                    <span class="article-tag">SHAP</span>
+                                    <span class="article-tag">Feature Selection</span>
+                                    <span class="article-tag">Interpretation</span>
+                                </div>
+                                <div class="article-footer">
+                                    <!-- <div class="views-count">👁️ 1.8K views</div> -->
+                                    <a href="https://medium.com/@singh.tarus/a-dive-into-ml-models-feature-selection-and-interpretation-faf4bbcc075d" class="read-more-btn">Read →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="article-card">
+                            <div class="article-image">🎯</div>
+                            <div class="article-body">
+                                <div class="article-category">Hyperparameter Tuning</div>
+                                <h3 class="article-title">Intro to WandB: Weights and Biases Tutorial</h3>
+                                <p class="article-excerpt">
+                                    Master hyperparameter tuning and performance optimization using Weights & Biases. 
+                                    Detailed methodology for metric evaluation without sacrificing accuracy.
+                                </p>
+                                <div class="article-tags">
+                                    <span class="article-tag">WandB</span>
+                                    <span class="article-tag">Hypertuning</span>
+                                    <span class="article-tag">MLOps</span>
+                                </div>
+                                <div class="article-footer">
+                                    <!-- <div class="views-count">👁️ 3.2K views</div> -->
+                                    <a href="https://medium.com/@singh.tarus/intro-to-wandb-weights-and-biases-a-tool-for-hyperparameter-tuning-part-1-99cb418b4b62" class="read-more-btn">Read →</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div id="experience" class="content-section">
+                    <h2 class="section-title">Professional Experience</h2>
+
+                    <div class="download-resume">
+                        <a href="Resume\TarushResume.pdf" download class="download-btn">
+                        📄 Download Resume
+                        </a>
+                    </div>
+
+                    <div class="timeline">
+
+                        <!-- FinOpsly -->
+                        <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun 2025 – Present</div>
+                            <div class="timeline-title">Senior Machine Learning Engineer</div>
+                            <div class="timeline-company">FinOpsly, Cincinnati, OH</div>
+                            <div class="timeline-description">
+                            Architected agentic LLM pipelines and scalable AI systems for FinOps analytics.
+                            <ul>
+                                <li>Built LangChain + FastAPI pipelines for 200K+ row datasets, increasing analytics throughput by <b>3×</b>.</li>
+                                <li>Implemented vector database memory modules reducing LLM token costs by <b>75%</b> and improving query speed by <b>40%</b>.</li>
+                                <li>Developed surrogate modeling and recursive reasoning workflows, improving classification F1 by <b>8%</b> and cutting reporting time by <b>50%</b>.</li>
+                                <li>Optimized A/B evaluation and latency, saving $50K annually and raising model accuracy by <b>22%</b>.</li>
+                                <li>Mentored 2 engineers, reducing onboarding time by <b>30%</b> and raising code coverage from 72% → 90%.</li>
+                            </ul>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Modlee AI -->
+                        <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jul 2024 – Apr 2025</div>
+                            <div class="timeline-title">AI Engineer – Graph-Aware LLM/LMM Systems</div>
+                            <div class="timeline-company">Modlee AI, Remote</div>
+                            <div class="timeline-description">
+                            Designed graph-based RAG and agentic reasoning pipelines for enterprise ML systems.
+                            <ul>
+                                <li>Built Neo4j + LangChain graph-RAG agents improving retrieval accuracy by <b>25%</b> and client throughput by <b>20%</b>.</li>
+                                <li>Reduced LLM hallucinations by <b>20%</b> via feedback-driven model selection.</li>
+                                <li>Deployed distributed ML microservices (Ray, Docker) achieving 99.9% uptime and 15K+ API calls monthly.</li>
+                                <li>Supported 5+ teams in agentic ML deployment, accelerating project delivery by <b>30%</b>.</li>
+                            </ul>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- HappSales -->
+                        <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep 2019 – Apr 2022</div>
+                            <div class="timeline-title">NLP Development Engineer</div>
+                            <div class="timeline-company">HappSales Pvt Ltd, India</div>
+                            <div class="timeline-description">
+                            Delivered production NLP agents and scalable microservices for enterprise clients.
+                            <ul>
+                                <li>Developed RASA/BERT-based voice CRM systems improving accuracy by <b>15%</b> and reducing manual input by <b>30%</b>.</li>
+                                <li>Automated deployment of 10+ NLP microservices (AWS Lambda + Docker), cutting release cycles by <b>40%</b>.</li>
+                                <li>Reduced production downtime to under 1 hr/month and bug resolution time by <b>25%</b>.</li>
+                            </ul>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+                <!-- Projects Section -->
+                <div id="projects" class="content-section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">🎮</div>
+                            <div class="project-body">
+                                <h3 class="project-title">StarCraft 2 AI Agent</h3>
+                                <p class="project-description">
+                                    Developed a StarCraft 2 AI using PySC2 and TensorFlow. Used OpenCV to highlight and map 
+                                    important game features, then trained a CNN model to predict game state and make strategic decisions.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">PySC2</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">OpenCV</span>
+                                    <span class="tech-tag">CNN</span>
+                                </div>
+                                <button class="read-more-btn" onclick="alert('Project details would be shown here')">View Project →</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">📸</div>
+                            <div class="project-body">
+                                <h3 class="project-title">Vision Transformer Image Captioning</h3>
+                                <p class="project-description">
+                                    Studied Vision Transformers and attention methods to design an image caption system on COCO dataset. 
+                                    Improved F1 score from 82% to 93% through optimization techniques.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Vision Transformers</span>
+                                    <span class="tech-tag">COCO Dataset</span>
+                                    <span class="tech-tag">Attention Mechanisms</span>
+                                </div>
+                                <button class="read-more-btn" onclick="alert('Project details would be shown here')">View Project →</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">🤖</div>
+                            <div class="project-body">
+                                <h3 class="project-title">IROS Fan Challenge Winner</h3>
+                                <p class="project-description">
+                                    Spearheaded development of precise motion algorithms for manipulator arm. Implemented AI-based 
+                                    fan detection contributing to Phase 1 victory at IROS 2018 Fan Challenge.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Robotics</span>
+                                    <span class="tech-tag">Computer Vision</span>
+                                    <span class="tech-tag">Motion Planning</span>
+                                    <span class="tech-tag">IROS</span>
+                                </div>
+                                <a href="https://ieeexplore.ieee.org/document/8594129" class="read-more-btn">View Publication →</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">🎵</div>
+                            <div class="project-body">
+                                <h3 class="project-title">Audio Sentiment Classification</h3>
+                                <p class="project-description">
+                                    Built a CNN-based system for classifying emotional sentiment from audio signals. 
+                                    Achieved 89% accuracy on speech emotion recognition datasets through advanced preprocessing.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Audio Processing</span>
+                                    <span class="tech-tag">CNN</span>
+                                    <span class="tech-tag">Sentiment Analysis</span>
+                                    <span class="tech-tag">Feature Engineering</span>
+                                </div>
+                                <button class="read-more-btn" onclick="alert('Project details would be shown here')">View Project →</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">🔍</div>
+                            <div class="project-body">
+                                <h3 class="project-title">Real-Time Anomaly Detection</h3>
+                                <p class="project-description">
+                                    Developed manufacturing quality control system using computer vision and machine learning. 
+                                    Deployed real-time anomaly detection achieving 98% accuracy in production environment.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Computer Vision</span>
+                                    <span class="tech-tag">Anomaly Detection</span>
+                                    <span class="tech-tag">Real-time Processing</span>
+                                    <span class="tech-tag">Manufacturing</span>
+                                </div>
+                                <button class="read-more-btn" onclick="alert('Project details would be shown here')">View Project →</button>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">🏆</div>
+                            <div class="project-body">
+                                <h3 class="project-title">Drug Development Tracking Platform</h3>
+                                <p class="project-description">
+                                    Built distributed application enabling cross-organization collaboration in pharmaceutical research. 
+                                    Integrated AI-powered analytics for tracking development progress and predicting outcomes.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Distributed Systems</span>
+                                    <span class="tech-tag">Collaboration Platform</span>
+                                    <span class="tech-tag">Data Analytics</span>
+                                    <span class="tech-tag">Pharmaceutical</span>
+                                </div>
+                                <button class="read-more-btn" onclick="alert('Project details would be shown here')">View Project →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (pageId === 'home') {
+                document.querySelector('.nav-links a[onclick="showPage(\'home\')"]').classList.add('active');
+            } else if (pageId === 'articles') {
+                document.querySelector('.nav-links a[onclick="showPage(\'articles\')"]').classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Re-initialize fade-in animations for new page
+            setTimeout(initializeFadeInAnimations, 100);
+        }
+
+        // Tab navigation for articles page
+        function showTab(tabId) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        // Scroll to section within home page
+        function scrollToSection(sectionId) {
+            // Make sure we're on home page
+            if (!document.getElementById('home').classList.contains('active')) {
+                showPage('home');
+                setTimeout(() => {
+                    const target = document.getElementById(sectionId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 300);
+            } else {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        // Initialize fade-in animations
+        function initializeFadeInAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Re-observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                el.classList.remove('visible');
+                el.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(el);
+            });
+        }
+
+        // Update active nav link on scroll (for home page)
+        window.addEventListener('scroll', () => {
+            if (document.getElementById('home').classList.contains('active')) {
+                let current = '';
+                const sections = document.querySelectorAll('#home section[id]');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Update nav highlighting based on scroll position
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    if (current === 'contact' && link.getAttribute('onclick')?.includes('contact')) {
+                        // Special handling for contact since it's not a page but a section
+                    }
+                });
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFadeInAnimations();
+        });
+    </script>
+</body>
+</html>
